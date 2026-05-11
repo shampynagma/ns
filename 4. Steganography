@@ -1,0 +1,13 @@
+!pip install stepic
+from PIL import Image
+import stepic
+
+# ENCRYPTION
+original_img = Image.open('img1.png')
+encoded_img = stepic.encode(original_img, b'Network Security')
+encoded_img.save('img2.png')
+
+# DECRYPTION
+encoded_img = Image.open('img2.png')
+decoded_img = stepic.decode(encoded_img)
+print(decoded_img)
