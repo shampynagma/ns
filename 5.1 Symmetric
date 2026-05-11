@@ -1,0 +1,20 @@
+!pip install pycryptodome
+import os
+from Crypto.Cipher import AES
+
+# Generating random key
+key = os.urandom(32)
+
+# Plain text message
+plaintext = b'This is a secret message'
+
+# Encryption
+cipher = AES.new(key, AES.MODE_EAX)
+ciphertext, tag = cipher.encrypt_and_digest(plaintext)
+
+
+# Decryption
+cipher = AES.new(key, AES.MODE_EAX, nonce=cipher.nonce)
+decrypted_message = cipher.decrypt(ciphertext)
+print("\nDecrypted Message:")
+print(decrypted_message.decode())
