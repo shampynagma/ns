@@ -1,0 +1,11 @@
+from cryptography.fernet import Fernet
+message="NS practical"
+key=Fernet.generate_key()
+fernet=Fernet(key)
+print("key", key)
+print("fernet",fernet)
+enc=fernet.encrypt(message.encode())
+print("original text",message)
+print("encrpyted text",enc.decode())
+dec=fernet.decrypt(enc.decode())
+print("decrypted text",dec.decode())
