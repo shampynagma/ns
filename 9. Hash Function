@@ -1,0 +1,31 @@
+import hashlib
+
+# SHA256
+# Initializing string
+str1 = "Network Security"
+# Encoding string and sending to SHA256
+result = hashlib.sha256(str1.encode())
+# Printing hexadecimal equivalent
+print("The hexadecimal equivalent of SHA256 is:")
+print(result.hexdigest())
+
+print("\n")
+
+# SHA384
+# Initializing string
+str2 = "Cryptography"
+# Encoding string and sending to SHA384
+result = hashlib.sha384(str2.encode())
+# Printing hexadecimal equivalent
+print("The hexadecimal equivalent of SHA384 is:")
+print(result.hexdigest())
+print("\n")
+
+# SHA224
+# Initializing string
+str3 = "Cybersecurity"
+# Encoding string and sending to SHA224
+result = hashlib.sha224(str3.encode())
+# Printing hexadecimal equivalent
+print("The hexadecimal equivalent of SHA224 is:")
+print(result.hexdigest())
